@@ -1,0 +1,21 @@
+:root {
+  --green: #b9ff66;
+  --grey: #f3f3f3;
+	--dark: #191a23;
+	--black: #000;
+
+  --radius-small: 14px;
+  --radius-big: 45px;
+
+  --margin-section: 140px;
+  --margin-title: 80px;
+
+  --font-size: 18px;
+  --font-family: "Space Grotesk", sans-serif;
+
+  --container-width: 1234px;
+  --container-padding: 20px;
+
+  --border: 1px solid var(--dark);
+}
+
