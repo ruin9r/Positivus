@@ -1,8 +1,9 @@
 :root {
   --green: #b9ff66;
   --grey: #f3f3f3;
-	--dark: #191a23;
-	--black: #000;
+  --dark: #191a23;
+  --black: #000;
+  --overlay: rgba(0, 0, 0, 0.5);
 
   --radius-small: 14px;
   --radius-big: 45px;
@@ -17,5 +18,267 @@
   --container-padding: 20px;
 
   --border: 1px solid var(--dark);
+
+  --transition: 0.4s;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container-width) + calc(var(--container-padding) * 2));
+  padding-inline: var(--container-padding);
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button-reset {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: 400;
+  color: var(--black);
+}
+
+.page.page--blocked {
+  overflow: hidden;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 60px;
+  margin-bottom: 70px;
+}
+
+.header__img {
+  width: 219px;
+  height: 36px;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.header__nav-link {
+  font-size: 20px;
+  padding: 3px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: background-color var(--transition);
+}
+
+.header__nav-link:hover {
+  background-color: var(--grey);
+}
+
+.header__nav-item--active .header__nav-link {
+  background-color: var(--grey);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__req {
+  padding: 20px 25px;
+  border: var(--border);
+  border-radius: var(--radius-small);
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--black);
+  transition: var(--transition);
+}
+
+.header__req:hover {
+  background-color: var(--grey);
+}
+
+.header__burger {
+  position: relative;
+  z-index: 3;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: none;
+}
+
+.header__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--black);
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.header__burger span:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.header__burger.header__burger--active span:nth-of-type(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.header__burger.header__burger--active span:nth-of-type(2) {
+  opacity: 0;
+
+}
+
+.header__burger.header__burger--active span:nth-of-type(3) {
+  transform: translateY(-10px) rotate(-45deg);
+
+}
+
+@media (max-width: 1062px) {
+
+  .header__wrapper {
+    padding-top: 45px;
+  }
+
+  .header__logo {
+    padding-top: 3px
+  }
+
+  .header__img {
+    width: 190px;
+    height: 27px;
+  }
+
+  .header__nav-list {
+    gap: 20px;
+  }
+
+  .header__nav-link {
+    font-size: 16px;
+  }
+
+  .header__req {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+
+}
+
+@media (max-width: 850px) {
+
+  .header__actions {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--green);
+    z-index: 2;
+
+    width: 60%;
+    height: 100vh;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 50px 80px 50px;
+
+    border-radius: var(--radius-small) 0 0 var(--radius-small);
+    transition: var(--transition);
+    transform: translateX(100%);
+  }
+
+  .header__actions.header__actions--open {
+    transform: translateX(0);
+  }
+
+  .header__nav-item.header__nav-item--active .header__nav-link {
+    background-color: transparent;
+  }
+
+  .header__actions .header__nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .header__actions .header__nav-link {
+    font-size: 30px;
+  }
+
+  .header__burger {
+    display: block;
+  }
+}
+
+@media (max-width: 442px) {
+
+  .header__wrapper {
+    padding-top: 30px;
+  }
+
+  .header__img {
+    width: 144px;
+    height: 23px;
+  }
+
+  .header__actions {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--overlay);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: var(--transition);
+
+}
+
+.overlay.overlay--active {
+  opacity: 1;
 }
 

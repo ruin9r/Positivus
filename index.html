@@ -10,7 +10,44 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="index.js"></script>
 </head>
-<body>
-  <h1>Hello World</h1>
+<body class="page">
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a class="header__logo link-reset" href="#" >
+          <img class="header__img" src="./icon/header/logo.svg" alt="Logo site" width="219" height="36">
+        </a>
+        <div class="header__actions">
+          <nav class="header__nav">
+            <ul class="header__nav-list list-reset">
+              <li class="header__nav-item header__nav-item--active">
+                <a class="header__nav-link link-reset" href="#">About us</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link link-reset" href="">Services</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link link-reset" href="">Use Cases</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link link-reset" href="">Pricing</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link link-reset" href="">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__req button-reset" type="button">Request a quote</button>
+        </div>
+        <button class="header__burger button-reset" aria-label="Open mobile menu" aria-expanded="false">
+          <div class="visually-hidden">Open mobile menu</div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay"></div>
 </body>
 </html>
