@@ -3,6 +3,7 @@
   --grey: #f3f3f3;
   --dark: #191a23;
   --black: #000;
+  --white: #ffffff;
   --overlay: rgba(0, 0, 0, 0.5);
 
   --radius-small: 14px;
@@ -60,6 +61,23 @@
   cursor: pointer;
   white-space: nowrap;
 }
+
+.button--black {
+  padding: 20px 35px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: var(--dark);
+  border-radius: var(--radius-small);
+  transition-duration: var(--transition);
+}
+
+.title-reset {
+  margin: 0;
+}
+
 
 
 *,
@@ -174,6 +192,69 @@
 
 }
 
+.hero__wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 108px;
+}
+
+.hero__content {
+  width: 100%;
+  max-width: 531px;
+}
+
+.hero__title {
+  font-weight: 500;
+  font-size: 60px;
+  color: var(--black);
+  margin-bottom: 35px;
+}
+
+.hero__desc {
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--black);
+  max-width: 498px;
+  margin-bottom: 35px;
+}
+
+.hero__button {
+  margin-bottom: 104px;
+}
+
+.hero__image {
+  background-image: url("./image/hero/hero_banner.png");
+  background-position: center;
+  background-size: contain ;
+  max-width: clamp(300px, 45vw, 601px);
+  aspect-ratio: 600 / 515;
+}
+
+.hero__swiper {
+  margin-bottom: var(--margin-section);
+}
+
+.hero__company-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.hero__company-item {
+  width: 100%;
+  max-width: 124px;
+  height: 48px;
+  filter: grayscale(100%);
+}
+
+.swiper-slide {
+  width: fit-content;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+
 @media (max-width: 1062px) {
 
   .header__wrapper {
@@ -202,8 +283,20 @@
     padding: 10px 20px;
   }
 
+  .hero__wrapper {
+    gap: 50px;
+  }
 
+  .hero__title {
+    font-size: 53px;
+    margin-bottom: 20px;
+  }
+
+  .hero__desc {
+    font-size: 18px;
+  }
 }
+
 
 @media (max-width: 850px) {
 
@@ -248,12 +341,34 @@
   .header__burger {
     display: block;
   }
+
+  .hero__title {
+    font-size: 43px;
+    margin-bottom: 20px;
+  }
+
+  .hero__desc {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .hero__button {
+    margin-bottom: 20px;
+  }
+
+  .hero__wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
 }
 
 @media (max-width: 442px) {
 
   .header__wrapper {
     padding-top: 30px;
+    margin-bottom: 40px;
   }
 
   .header__img {
@@ -264,6 +379,18 @@
   .header__actions {
     border-radius: 0;
     width: 100%;
+  }
+
+  .hero__wrapper {
+    grid-template-rows: 1fr 310px;
+  }
+
+  .hero__button {
+    width: 100%;
+  }
+
+  .hero__swiper {
+    margin-bottom: 60px;
   }
 }
 

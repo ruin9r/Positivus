@@ -9,3 +9,16 @@ burgerBtn.addEventListener('click', () => {
   overlay.classList.toggle("overlay--active");
   body.classList.toggle("page--blocked");
 })
+
+const swiper = new Swiper('.hero__swiper', {
+  direction: "horizontal",
+  slidesPerView: "auto",
+  allowTouchMove: false,
+  loop: true,
+  speed: 9000,
+  spaceBetween: 95, 
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  }
+})
