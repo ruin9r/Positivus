@@ -5,21 +5,30 @@
   --black: #000;
   --overlay: rgba(0, 0, 0, 0.5);
   --white: #ffffff;
-
+  
+  --radius-title: 7px;
   --radius-small: 14px;
   --radius-big: 45px;
 
   --margin-section: 140px;
   --margin-section-mobile: 60px;
   --margin-title: 80px;
+  
+  --padding-card: 50px 0 50px 50px;
+  --card-gap: 40px;
 
   --font-size: 18px;
   --font-family: "Space Grotesk", sans-serif;
+  
+  --font-size-title: 40px;
+  --font-weigth-title: 500;
+  --size-title-card: 30px;
 
   --container-width: 1234px;
   --container-padding: 20px;
 
   --border: 1px solid var(--dark);
+  --shadow: 0 5px 0 0 var(--dark);
 
   --transition: 0.4s;
 }
@@ -61,6 +70,80 @@
   color: inherit;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.title-section {
+  margin: 0;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weigth-title);
+}
+
+.title-card {
+  margin: 0;
+  font-size: var(--size-title-card);
+  font-weight: var(--font-weigth-title);
+}
+
+.title--green {
+  display: inline-block;
+  padding-inline: 7px;
+  border-radius: var(--radius-title);
+  background-color: var(--green);
+}
+.title--white {
+  display: inline-block;
+  padding-inline: 7px;
+  border-radius: var(--radius-title);
+  background-color: var(--white);
+}
+
+.card {
+  border: var(--border);
+  border-radius: var(--radius-big);
+  box-shadow: var(--shadow);
+  padding: var(--padding-card);
+}
+
+.card--bg-grey {
+  background-color: var(--grey);
+}
+
+.card--bg-green {
+  background-color: var(--green);
+}
+
+.card--bg-black {
+  background-color: var(--dark);
+}
+
+.circle {
+  display: inline-block;
+  padding: 11px 10px 5px 10px;
+  border-radius: 50%;
+}
+
+.circle--black {
+  background-color: var(--dark)
+}
+
+.circle--white {
+  background-color: var(--white)
+}
+
+.arrow-green {
+  svg {
+    path {
+      fill: var(--green);
+    }
+  }
+}
+
+.arrow-black {
+  svg {
+    path {
+      fill: var(--black);
+    }
+  }
 }
 
 
@@ -257,6 +340,24 @@
 
 .swiper-wrapper {
   transition-timing-function: linear;
+}
+
+.services__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: var(--margin-title);
+}
+
+.services__desc {
+  max-width: 590px;
+}
+
+.services__card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--card-gap);
 }
 
 @media (max-width: 1062px) {

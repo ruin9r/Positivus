@@ -16,6 +16,7 @@ const swiper = new Swiper ('.hero__swiper', {
   loop: true,
   speed: 9000,
   spaceBetween: 37,
+  allowTouchMove: false,
   autoplay: {
     delay: 0,
   }, 
