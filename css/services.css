@@ -1,0 +1,158 @@
+.services__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: var(--margin-title);
+}
+
+.services__card-title {
+  margin-top: 0;
+}
+
+.services__desc {
+  max-width: 590px;
+}
+
+.services__card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--card-gap);
+}
+
+.services__card-title {
+  max-width: 221px;
+  margin-bottom: 93px;
+}
+
+.services__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.services__card-wrapper {
+  position: relative;
+}
+
+
+.services__card-wrapper::after {
+  content: "";
+  position: absolute;
+
+  right: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.services__card-wrapper--search::after {
+  bottom: 72px;
+  width: 210px;
+  height: 166px;
+  background-image: url("../image/services/search_engine.png");
+}
+
+.services__card-wrapper--pay:after {
+  bottom: 82px;
+  width: 210px;
+  height: 147px;
+  background-image: url("../image/services/pay_click.png");
+}
+
+.services__card-wrapper--social:after {
+  bottom: 50px;
+  width: 208px;
+  height: 210px;
+  background-image: url("../image/services/social_media.png");
+}
+.services__card-wrapper--email:after {
+  bottom: 59px;
+  width: 210px;
+  height: 193px;
+  background-image: url("../image/services/email.png");
+}
+
+.services__card-wrapper--content:after {
+  bottom: 57px;
+  width: 210px;
+  height: 196px;
+  background-image: url("../image/services/content.png");
+}
+
+.services__card-wrapper--analytics:after {
+  bottom: 70px;
+  width: 210px;
+  height: 170px;
+  background-image: url("../image/services/analytics.png");
+}
+
+.services__card-label--white {
+  color: var(--white);
+}
+
+.services__card-label {
+  position: relative;
+}
+
+.services__card-label:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--dark);
+  transition-duration: var(--transition);
+  border-radius: var(--radius-small);
+}
+
+.services__card-label--white:before {
+  background-color: var(--white);
+  width: 0;
+}
+
+.services__card-wrapper:hover .services__card-label:before {
+  width: 100%;
+}
+
+.services__card-wrapper:hover .services__card-label:before {
+  width: 100%;
+}
+
+.services__card-list {
+  margin-bottom: var(--margin-section);
+}
+
+.services__cta-wrapper {
+  position: relative;
+  border-radius: var(--radius-big);
+  background-color: var(--grey);
+  padding: 60px;
+}
+
+.services__cta-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -23px;
+  right: 135px;
+
+  background-image: url("../image/services/heppen_Illustration.png");
+  width: 359px;
+  height: 394px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.services__cta-title {
+  font-size: var(--size-title-card-tablet);
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.services__cta-desc {
+  display: block;
+  max-width: 500px;
+  margin-bottom: 26px;
+}
